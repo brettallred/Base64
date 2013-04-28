@@ -1,0 +1,18 @@
+= simple_form_for(@convert, :url => url_for(:action => 'index', :controller => 'base64'), :method => 'get', :html => {:class => 'form-horizontal' }) do |form|
+  .control-group
+    .controls
+      = form.label :encode_string, "Encode String"
+      = form.text_area :encode_string, :class => 'input-email', :style => "width: 350px; height: 150px"
+    .controls
+      = form.label :encode_string, "Decode String"
+      = form.text_area :decode_string, :class => 'input-email', :style => "width: 350px; height: 150px"
+  .control-group
+    .controls
+      = form.radio_button :convert_type, "ENCODING", :checked => true
+      = form.label :convert_type_encoding, "Do Encoding", :style => "display: inline;"
+    .controls 
+      = form.radio_button :convert_type, "DECODING"   
+      = form.label :convert_type_decoding, "Do Decoding", :style => "display: inline;"
+  .control-group
+    .controls
+      = form.submit "Convert", :class => "btn btn-primary"

@@ -20,11 +20,10 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'bootstrap-sass'
   #gem 'simple_form'
-  gem 'haml'
 end
 
 gem 'jquery-rails'
-
+gem 'haml'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

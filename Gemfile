@@ -19,7 +19,7 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
   gem 'bootstrap-sass'
-  gem 'simple_form'
+  #gem 'simple_form'
   gem 'haml'
 end
 

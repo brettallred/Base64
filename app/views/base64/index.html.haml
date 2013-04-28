@@ -1,4 +1,4 @@
-= simple_form_for(@convert, :url => url_for(:action => 'index', :controller => 'base64'), :method => 'get', :html => {:class => 'form-horizontal' }) do |form|
+= form_for(@convert, :url => url_for(:action => 'index', :controller => 'base64'), :method => 'get', :html => {:class => 'form-horizontal' }) do |form|
   .control-group
     .controls
       = form.label :encode_string, "Encode String"

@@ -1,7 +1,9 @@
 Base64::Application.routes.draw do
   
-  root :to => "base64#index"
-  get "base64/index"
+  root :to => "base64#encode"
+  
+  get "base64/encode"
+  get "base64/decode"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

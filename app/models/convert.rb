@@ -18,11 +18,11 @@ class Convert
   end
   
   def encode
-    self.decode_string = Base64.encode64(encode_string)
+    self.decode_string = Base64.encode64(encode_string) unless encode_string.blank?
   end
   
   def decode
-    self.encode_string = Base64.decode64(decode_string)
+    self.encode_string = Base64.decode64(decode_string) unless encode_string.blank?
   end
   
   def process

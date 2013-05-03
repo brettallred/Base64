@@ -22,7 +22,7 @@ class Convert
   end
   
   def decode
-    self.encode_string = Base64.decode64(decode_string) unless encode_string.blank?
+    self.encode_string = Base64.decode64(decode_string) unless decode_string.blank?
   end
   
   def process

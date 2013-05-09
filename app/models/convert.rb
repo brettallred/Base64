@@ -19,11 +19,7 @@ class Convert
   
   def encode
     unless encode_string.blank?
-      #sur_type = "UTF-8"
       des_type = Charset.find(self.convert_type.to_i).caption
-      #ec = Encoding::Converter.new(sur_type, des_type)
-      #converted_string = ec.convert(encode_string).dump
-      #converted_string = encode_string.encode(des_type)
       self.decode_string = Base64.strict_encode64(encode_string)
       self.decode_string = self.decode_string.encode(des_type)  
     end
@@ -31,10 +27,7 @@ class Convert
   
   def decode
     unless decode_string.blank?
-      #sur_type = "UTF-8"
       des_type = Charset.find(self.convert_type.to_i).caption
-      #ec = Encoding::Converter.new(sur_type, des_type)
-      #converted_string = ec.convert(decode_string).dump
       converted_string = decode_string.encode(des_type)
       self.encode_string = Base64.strict_decode64(converted_string)
     end

@@ -18,21 +18,28 @@ class Convert
   end
   
   def encode
-    self.decode_string = Base64.encode64(encode_string) unless encode_string.blank?
-  end
-  
-  def decode
-    self.encode_string = Base64.decode64(decode_string) unless decode_string.blank?
-  end
-  
-  def process
-    if self.convert_type == "ENCODING"
-      self.encode
-    elsif self.convert_type == "DECODING"
-      self.decode
+    unless encode_string.blank?
+      #sur_type = "UTF-8"
+      des_type = Charset.find(self.convert_type.to_i).caption
+      #ec = Encoding::Converter.new(sur_type, des_type)
+      #converted_string = ec.convert(encode_string).dump
+      #converted_string = encode_string.encode(des_type)
+      self.decode_string = Base64.encode64(encode_string)
+      self.decode_string = self.decode_string.encode(des_type)  
     end
   end
   
+  def decode
+    unless decode_string.blank?
+      #sur_type = "UTF-8"
+      des_type = Charset.find(self.convert_type.to_i).caption
+      #ec = Encoding::Converter.new(sur_type, des_type)
+      #converted_string = ec.convert(decode_string).dump
+      converted_string = decode_string.encode(des_type)
+      self.encode_string = Base64.decode64(converted_string)
+    end
+  end
+
   def persisted?
     false
   end

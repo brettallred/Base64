@@ -5,8 +5,12 @@
       = link_to "Decode", base64_decode_path, :class => "btn btn-warning pull-right"
   .control-group
     .controls
-      = form.label :decode_string, "String to Decode"
+      = form.label :decode_string, "String to Decode"  
       = form.text_area :decode_string, :class => 'input-email', :style => "width: 350px; height: 150px"
+  .control-group
+    .controls  
+      = form.label  :convert_type, "You can select input charset"
+      = form.select :convert_type, options_from_collection_for_select(@charsets, 'id', 'caption', @convert.convert_type.to_i)      
   .control-group
     .controls
       = form.label :encode_string, "Decoded String"

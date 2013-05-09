@@ -8,6 +8,10 @@
       = form.label :encode_string, "String To Encode"
       = form.text_area :encode_string, :class => 'input-email', :style => "width: 350px; height: 150px"
   .control-group
+    .controls  
+      = form.label  :convert_type, "You can select output charset"
+      = form.select :convert_type, options_from_collection_for_select(@charsets, 'id', 'caption', @convert.convert_type.to_i) 
+  .control-group
     .controls
       = form.label :decode_string, "Decoded String"
       = form.text_area :decode_string, :class => 'input-email', :style => "width: 350px; height: 150px"

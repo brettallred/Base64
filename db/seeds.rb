@@ -5,3 +5,16 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Charset.create(
+  [
+    { caption: "UTF-8"},
+    { caption: "ASCII"},
+    { caption: "CP1256"},
+    { caption: "ISO-8859-1"},
+    { caption: "ISO-8859-2"},
+    { caption: "ISO-8859-2"},
+    { caption: "ISO-8859-6"},
+    { caption: "ISO-8859-15"},
+    { caption: "Windows-1252"}
+  ]
+)
